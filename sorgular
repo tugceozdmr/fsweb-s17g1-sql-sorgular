@@ -1,0 +1,37 @@
+
+select ograd,ogrsoyad,sinif from ogrenci
+select ograd,cinsiyet from ogrenci where cinsiyet='K'
+select distinct sinif from ogrenci
+select ograd,sinif from ogrenci where sinif='10A' or cinsiyet='K'
+select ograd,ogrsoyad,sinif from ogrenci where sinif='10A' or cinsiyet='10B'
+select ograd as "ad", ogrsoyad as "soyad", ogrno as "okul numarası" from ogrenci
+select concat (ograd,"",ogrsoyad) as "adsoyad" from ogrenci 
+select ograd from ogrenci where ograd like 'A%'
+select kitapadi, sayfasayisi from kitap where sayfasayisi between '50' and '200'
+select * from  ogrenci where ograd in('Fidan','İsmail','Leyla')
+ select  * from ogrenci where ograd like 'A%' or   ograd like 'D%' or  ograd like  'K%'
+ select ograd,ogrsoyad,sinif,cinsiyet from ogrenci where sinif='9A' and cinsiyet='E' or sinif='9B' and cinsiyet='K'
+ select * from ogrenci where sinif='10A' and cinsiyet='E'  or  sinif='10B'  and cinsiyet='E'  ya da   select * from ogrenci where cinsiyet="E" and (sinif="10A" or sinif="10B")
+ select * from ogrenci where dtarih like '1989%'
+select * from ogrenci where cinsiyet="K" and (ogrno between 30 and 50)
+ select ograd  from ogrenci order by ograd asc
+select * from ogrenci order by ograd, ogrsoyad
+ select * from ogrenci where sinif='10A' order by ogrno desc
+select * from ogrenci limit 10
+select ograd, ogrsoyad, dtarih from ogrenci limit 10
+select * from kitap  order by  sayfasayisi desc  limit 1 ya da  select  * from kitap where sayfasayisi = (select max(sayfasayisi) from kitap)
+select  * from ogrenci where dtarih = (select min(dtarih) from ogrenci)
+select  * from ogrenci where dtarih = (select max(dtarih) from ogrenci)
+select  * from kitap  where kitapadi like '_N%'
+select ograd, ogrsoyad, sinif  from ogrenci group by sinif , ograd, ogrsoyad
+select * from  ogrenci where ogrno order by rand() limit 1
+select * from  ogrenci order by rand() limit 1
+select * from  ogrenci where sinif='10A' order by rand() limit 1
+select ograd as "isim",count(*)  as "adet" from ogrenci group by ograd
+
+
+
+
+
+
+
